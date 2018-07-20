@@ -22,7 +22,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 			console.log('EVENT KEY:'+event.key+":");
 			var tempEventID = count;
 
-			people.orderByChild('event_id').equalTo(event.key.toString()).once('value').then(function(peopleSnap) {
+			people.orderByChild('event_id').equalTo(parseInt(event.key)).once('value').then(function(peopleSnap) {
 				console.log("numChildren: "+peopleSnap.numChildren());
 				peopleSnap.forEach(function(person) {
 					console.log(person.key);

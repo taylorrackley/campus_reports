@@ -1,0 +1,41 @@
+[debug] [2018-07-20T23:42:58.208Z] ----------------------------------------------------------------------
+[debug] [2018-07-20T23:42:58.208Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Taylor Rackley\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-07-20T23:42:58.212Z] CLI Version:   3.19.3
+[debug] [2018-07-20T23:42:58.212Z] Platform:      win32
+[debug] [2018-07-20T23:42:58.212Z] Node Version:  v6.11.5
+[debug] [2018-07-20T23:42:58.213Z] Time:          Fri Jul 20 2018 19:42:58 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-07-20T23:42:58.213Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-20T23:42:58.229Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-20T23:42:58.230Z] > authorizing via signed-in user
+[debug] [2018-07-20T23:42:58.234Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-07-20T23:42:58.234Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/WCO-oph9TdQa6swDAAh7X-1Pofu_TXfmWkxNL9PMdyavwxshkMzj_kZtmRAEnzsY',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Jul 20 2018 19:42:58 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-07-20T23:42:58.395Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-20T23:42:58.411Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/test-30a16  
+  
+ Fri Jul 20 2018 19:42:58 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-07-20T23:42:58.756Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-20T23:42:58.756Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/test-30a16/tokens  
+  
+ Fri Jul 20 2018 19:42:58 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-07-20T23:42:59.196Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-20T23:42:59.196Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/test-30a16  
+  
+ Fri Jul 20 2018 19:42:59 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-07-20T23:42:59.471Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Taylor Rackley\Downloads\campus_reports'...
+[info] 
+[debug] [2018-07-20T23:42:59.484Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/667509319135/clients/_:getWebAppConfig  
+  
+ Fri Jul 20 2018 19:42:59 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-07-20T23:42:59.865Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
