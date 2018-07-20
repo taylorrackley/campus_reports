@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+
+		<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-database.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyB-dgCAy1Ef5gS-s26YuT3kWm-nIOO4KY0",
+		    authDomain: "test-30a16.firebaseapp.com",
+		    databaseURL: "https://test-30a16.firebaseio.com",
+		    projectId: "test-30a16",
+		    storageBucket: "test-30a16.appspot.com",
+		    messagingSenderId: "667509319135"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/bootstrap.js"></script>
+		<script src="/js/vis.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+
+				var email = 'safety@covenant.edu';
+				var password = 'Moriah1234';
+				firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+				  // Handle Errors here.
+				  var errorCode = error.code;
+				  var errorMessage = error.message;
+				  // ...
+				});
+
+				firebase.auth().onAuthStateChanged(function (user) {
+					var db = firebase.database();
+					var events = db.ref('events/');
+					var event_types = db.ref('event_types/');
+					var people = db.ref('people/');
+
+					events.once('value', function(snapshot) {
+						var eventID = snapshot.numChildren()+1;
+
+						db.ref('events/'+eventID).set({
+							clery: 'false',
+							title: 'Stolen Toothbrush',
+							description: 'Jonathan stole Daniels toothbrush',
+							report_date: '2018-7-12',
+						 types: {
+								prank: 'true'
+							}
+						});
+
+						people.push({event_id: eventID, banner_id:'@011678058', first_name:'Zach', last_name:'Sherman'});
+						people.push({event_id: eventID, banner_id:'@011549303', first_name:'Taylor', last_name:'Rackley'});
+						people.push({event_id: eventID, banner_id:'@034983432', first_name:'Abby', last_name:'Sherman'});
+						event_types.child('prank/'+eventID).set(true);
+
+					});
+
+					events.once('value', function(snapshot) {
+						var eventID = snapshot.numChildren()+1;
+
+						df.ref('events/'+eventID).set({
+							clery: 'false',
+							title: 'Deer Prank',
+							description: 'Catacombs left a dead deer on Ghetto',
+							report_date: '2017-10-13',
+							types: {
+								prank: 'true',
+								vandalism: 'true'
+							}
+						});
+
+						people.push({event_id: eventID, banner_id:'@011678000', first_name:'Xavior', last_name:'Rollman'});
+						people.push({event_id: eventID, banner_id:'@011549303', first_name:'Taylor', last_name:'Rackley'});
+						people.push({event_id: eventID, banner_id:'@034983400', first_name:'AJ', last_name:'Rollman'});
+						event_types.child('prank/'+eventID).set(true);
+						event_types.child('vandalism/'+eventID).set(true);
+					});
+					
+				});
+			});
+		</script>
+  </body>
+</html>
